@@ -1,10 +1,11 @@
 <input type="text" ng-model="mushroomName">
 <h2>These are Mushrooms!</h2>
-<input type="radio" ng-model="poisonous">Poisonous
-<input type="radio" ng-model="non-poisonous">Non-Poisonous
+<input type="radio" name="mushroomType" ng-model="poisonous">Poisonous
+<input type="radio" name="mushroomType" ng-model="nonPoisonous">Non-Poisonous
 
-<ul>
-    <li ng-repeat="mushroom in mushroomList | filter: mushroomName">
+<ul ng-repeat="mushroom in mushroomList">
+    <li {{mushrooms.data}}>
+        
         <!-- <a href="#!/songs/{{song.id}}">{{song.title}}, by {{song.artist}}</a> -->
     </li>
 </ul>
