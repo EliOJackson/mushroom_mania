@@ -4,6 +4,7 @@ angular.module("mushroomFun").controller("MushroomCtrl", function($scope, Mushro
     console.log('hello')
     MushroomFactory.getMushrooms()
     .then( (mushroomData) => {
-        console.log('mushroomData',mushroomData);
+        $scope.allShrooms = Object.values(mushroomData.data)
+        console.log('all shrooms', $scope.allShrooms);
     })
 })
