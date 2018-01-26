@@ -9,6 +9,7 @@
 <ul>
     <h2>These are Mushrooms!</h2>
     <li ng-if = "poison !== mushroom.edible" ng-repeat="mushroom in allShrooms | filter: mushroomName ">
-     {{mushroom.name}}
+     <strong>{{mushroom.name}}</strong>
+        <p>{{mushroom.description}}</p>
     </li>
 </ul>
