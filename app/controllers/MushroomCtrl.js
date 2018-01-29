@@ -1,8 +1,7 @@
 'use strict';
 
-angular.module("mushroomFun").factory("MushroomFactory", function($q, $http){
-
-    let getMushrooms = () => {
+angular.module("mushroomFun").controller("MushroomCtrl", function($scope, MushroomFactory) {
+  let getMushrooms = () => {
         return $q( (resolve, reject) => {
             $http
                 .get("https://c23-ej-demo.firebaseio.com/mushrooms.json")
@@ -16,3 +15,7 @@ angular.module("mushroomFun").factory("MushroomFactory", function($q, $http){
     };
     return { getMushrooms };
 })
+
+getMushrooms()
+.then( (mushroomData) => {
+    $scope.allShrooms = Object.values(mushroomData.data)
